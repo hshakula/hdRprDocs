@@ -1,0 +1,26 @@
+### Manual install
+
+Add a new Houdini package with such configuration json:
+```
+{
+    "env":[
+        {
+            "RPR":"path-to-the-package"
+        },
+        {
+            "HOUDINI_PATH":"$RPR/houdini"
+        },
+        {
+            "PATH":"$RPR/bin"
+        }
+    ]
+}
+```
+where `path-to-the-package` depends on where do you unzip hdRpr package and should point to the directory that contains INSTALL.md
+
+More info here https://www.sidefx.com/docs/houdini/ref/plugins.html
+
+### Automatic install
+
+`activateHoudiniPlugin.py` script can do the same for you automatically - it will try to find your houdini preference dir and add hdRpr package that will point to the current directory.
+Python3 required.

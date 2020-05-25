@@ -1,0 +1,11 @@
+* Launch Houdini, save new .hip file in the current directory
+* Add `Sublayer` node (sublayer.png)
+* Set sublayer path to `$HIP/../../../asset/basicScene/generated/scene.usda` (sublayerPath.png)
+* Select RPR renderer (default.png)
+* Add `Render Geometry Settings` node
+* Turn on the display of the node
+* Set `Primitives` to `/sphereGlass/geo`
+* Activate `Camera Visibility` and uncheck it (cameraVis.png)
+* Do the same with `Shadow Visibility` (shadowVis.png)
+* Change `Primitives` to `/shaderBall/geo/mesh_0`
+* Uncheck `Refraction Visibility` - shaderBall should disappear from refraction in glass sphere (refractionVis.png)

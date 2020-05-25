@@ -1,0 +1,21 @@
+* Launch Houdini, save new .hip file in the current directory
+* Add `Sublayer` node (sublayer.png)
+* Set sublayer path to `$HIP/../../../asset/basicScene/generated/scene.usda` (sublayerPath.png)
+* Add `Xform` node and turn on the display of the node (display.png)
+* Set Xform's `Primitive path` to `/shaderBall1`
+* Set keyframe on `Translate.z` (setKeyframe.png)
+* Set `End Frame` and `Global Animation End Frame` to 5 (endFrame.png)
+* Set `Current Frame` to 5 (currentFrame.png)
+* Set `Translate.z` to 1 (translate.png)
+* Add KeyFrame (addKeyframe.png)
+* Move frame slider and make sure that translation is animated accross frames
+* Motion blur is broken in Houdini's viewport starting from 416th release. So either you can use 391st release and `Cache` node or export the stage and render with husk (we do the second way next)
+* Add `USD ROP` node and save stage to the disk to `$HIP/test.usda`. Make sure you've set `Valid Frame Range` to `Render Specific Frame Range`. (usdRop.png)
+* Next, you will need to run husk from the command line.
+* Windows: Launch `Command Line Tools` (cmdTools.png). On macOS/Linux, launch terminal and source houdini_setup (https://www.sidefx.com/docs/houdini/basics/config_env.html follow instructions under `Browsing environment variables`)
+* cd to your stage directory. In our case, it would be `cd C:\dev\hdRprDocs\houdini\general\motionBlur` (check screenshot) (stagePath.png)
+* Run `husk -R RPR -f 3 -V 9 -o test_$F3.png test.usda`
+* Expected output (test_003.png)
+
+Notes:
+* Motion blur is available for meshes and cameras. Mesh has motion blur for translation, rotation, and scale, the camera supports translation and rotation only

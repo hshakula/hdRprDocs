@@ -1,0 +1,10 @@
+* Start Houdini.
+* Switch to the Solaris desktop (solaris.png)
+* Add sphere to the stage (sphere.png)
+* Select RPR renderer (renderer.png)
+* Check viewport (sphereViewport.png)
+* Add some lighting (light.png)
+* Make it visible by pressing on `Display` button (display.png)
+* Press on the Light node, open `Transform` tab, and place light somewhere on the scene (transform.png)
+* Change intensity (intensity.png)
+* Check viewport (final.png)

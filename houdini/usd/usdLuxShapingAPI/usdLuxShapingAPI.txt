@@ -1,0 +1,13 @@
+UsdLuxShapingAPI allow us to define point, spot and IES lights
+
+* Launch Houdini, save new .hip file in the current directory
+* Add `Sublayer` node (sublayer.png)
+* Set sublayer path to `$HIP/../../../asset/basicScene/generated/scene.usda` (sublayerPath.png)
+* Add light and change its name to `light3` to not interfere with existing lights on the stage
+* Light is of point light type by default
+* Open `Shaping` tab (tab.png)
+* Check `Spotlight` (spotlight.png)
+* hdRpr supports `Angle` and `Softness` attributes
+* Uncheck `Spotlight` and check `IES`
+* You need to specify a path to valid .ies file (you can use `scatter-light.ies` from the current directory)
+* You can control intensity and color on the `Base Properties` tab. `normalize` and `angle` is not supported yet (ies.png)

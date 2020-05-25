@@ -1,0 +1,45 @@
+* building ✓
+* hdRpr
+    - render
+        # aov
+        # tonemap
+        # renderSettings
+    - primitives
+        # mesh ✓
+        # curve ✓
+        # light ✓
+        # point ✓
+        # volume ✓
+        # camera ✓
+        # material ✓
+    - general
+        # motionBlur ✓
+        # subdivision ✓
+        # visibilityFlags ✓
+* houdini
+    - installation ✓
+    - startingPlugin ✓
+    - primitives
+        # mesh
+        # curve
+        # light
+        # point
+        # volume
+        # camera
+        # material
+    - render
+        # aov
+        # renderSettings ✓
+    - general
+        # motionBlur ✓
+        # subdivision ✓
+        # visibilityFlags ✓
+    - usd
+        # usdLuxShapingAPI ✓
+        # usdSkel ✓
+    - exporting ✓
+* usdview
+    - rprMenu
+    - render
+        # aov
+        # renderSettings

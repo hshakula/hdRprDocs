@@ -1,0 +1,12 @@
+Supported:
+* Transformation motion blur only
+* Meshes: translate, rotate and scale motion blur
+* Camera: translate, rotate motion blur
+* `instantaneousShutter` camera attribute
+
+Limitations:
+* In USD it's possible to have an arbitrary number of time samples that fall in shutter interval. We sample only edge values.
+
+Motion blur is controlled by two key components:
+* Shutter interval of the active camera
+* Time sampled transformation

@@ -1,0 +1,5 @@
+* Add `Fuzzy Transition Example` (crowdExample.png)
+* Switch to `Stage` view
+* Add `SOP Import` node (sopImport.png)
+* Set `SOP Path` to `/obj/fuzzystatetransition1/crowdsource` (path.png)
+* After adding some light and subdivision you should see something like this (output.png)

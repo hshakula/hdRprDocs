@@ -1,0 +1,14 @@
+Supported:
+* Density, emission and albedo grids
+* Float OpenVDB grids only. From file or from memory (houdini only)
+* hdRpr specific grid attributes:
+    - normalize - bool - false - whether gridValue should be normalized
+    - scale - float - 1.0 - scale to be applied to value before lookup table. `gridColor = LUT(scale * gridValue)`
+    - gain - float - 1.0 - gain to be applied to LUT values. `LUT(x) = LUT(x) * gain + bias`
+    - bias - float - 0.0 - bias to be applied to LUT values. `LUT(x) = LUT(x) * gain + bias`
+    - ramp - vec3fArray - [vec3(0), vec3(1)] - value lookup table
+    - blackbodyMode - TfToken - `auto` (actual for temperature grid only):
+        * `physical`: temperature interpreted as pure physical values - the temperature in Kelvins. The temperature will be normalized by some max temperature and used as an emissive lookup. The emission lookup table will be filled with blackbody colors in the range [0, 10000]
+        * `artistic`: temperature is directly passed to an emission lookup table
+        * `auto`: select physical or artistic mode depending on file metadata
+* Parsing of `ramp` and `scale` from OpenVDB Houdini-like metadata for density and temperature

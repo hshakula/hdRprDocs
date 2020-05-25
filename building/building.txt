@@ -1,0 +1,66 @@
+Getting and Building the Code
+-----------------------------
+
+#### 1. Install prerequisites
+
+- Required:
+    - C++ compiler:
+        - gcc
+        - Xcode
+        - Microsoft Visual Studio
+    - CMake
+    - Python
+
+#### 2. Download the hdRpr source code
+
+You can use ```git``` to clone the repository.
+
+```
+> git clone --recurse-submodules -j2 https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRenderUSD
+Cloning into 'RadeonProRenderUSD'...
+```
+
+or
+
+```
+> git clone https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRenderUSD
+Cloning into 'RadeonProRenderUSD'...
+> cd RadeonProRenderUSD
+> git submodule update --init
+```
+
+#### 3. Configure project using cmake
+
+##### Required Components
+
+##### USD Component
+
+Provide USD in one of two ways:
+
+* An installation of USD. Define pxr_DIR to point to it when running cmake, if required. You can download USD to build yourself from [GitHub](https://www.github.com/PixarAnimationStudios/USD).
+* The USD which is provided with Houdini. The HFS environment variable should point to the Houdini installation (the correct way is to run cmake from Houdini's `Command Line Tools` or by sourcing `houdini_setup`). You can download Houdini installer from [Downloads | SideFX](https://www.sidefx.com/download).
+
+##### Optional Components
+
+##### OpenVDB
+
+**Following dependency required only for usdview plugin, houdini is shipped with own build of openvdb**
+
+| Dependency Name            | Description                                                             | Version          |
+| ------------------         |-----------------------------------------------------------------------  | -------          |
+| OPENVDB_LOCATION           | OpenVDB directory with include and lib dirs                             |                  |
+
+##### Example
+
+```
+cd RadeonProRenderUSD
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=_package ..
+```
+
+#### 4. Compile the project
+
+```
+cmake --build . --config Release --target install
+```

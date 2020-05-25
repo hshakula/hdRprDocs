@@ -1,0 +1,14 @@
+Visibility settings allow you to make objects in the scene visible or invisible with regard to particular light rays, such as camera visibility, reflections or shadows.
+
+Object visibility is controlled through primvars of bool type:
+* `rpr:visibilityPrimary`
+* `rpr:visibilityShadow`
+* `rpr:visibilityReflection`
+* `rpr:visibilityGlossyReflection`
+* `rpr:visibilityRefraction`
+* `rpr:visibilityGlossyRefraction`
+* `rpr:visibilityDiffuse`
+* `rpr:visibilityTransparent`
+* `rpr:visibilityLight`
+
+Visibility flags supported by meshes, basisCurves, points and geometry lights (sphere, rect, cylinder and disk)

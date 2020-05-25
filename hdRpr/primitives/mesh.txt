@@ -1,0 +1,8 @@
+hdRpr supports HdMesh primitives and all standard primvars:
+* st primvar name is automatically resolved if bound material network has corresponding `varname` for st token
+* points primvar can be computed (usdSkel)
+
+Limitations:
+* Subdivision supported in `Full` quality only
+* Corner and crease indices of subdivision surface are not supported
+* `displayColor` primvar has very limited effect, if no material for mesh present then we will shade mesh with the first available color in `displayColor` primvar

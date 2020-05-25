@@ -1,0 +1,4 @@
+Subdivision supported on meshes only.
+To control the level of subdivision add `rpr:subdivisionLevel` int primvar to the mesh primitive.
+Subdivision supported in `Full` quality only.
+Corner and crease indices of subdivision surface are not supported.

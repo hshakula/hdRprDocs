@@ -1,0 +1,6 @@
+* Add geometry to the stage (or open the stage from `startingPlugin`)
+* Add `Render Geometry Settings` (settings.png)
+* Select `RPR` tab (tab.png)
+* Activate `Subdivision Level` setting by changing control dropdown to `Set or Create` (activate.png)
+* Drag geometry primitive (or type path manually) to the `Primitives` field
+* Set `Subdivision Level` to 3 and check viewport (final.png)

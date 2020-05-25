@@ -1,0 +1,18 @@
+Supported:
+* transform motion blur
+* perspective and orthographic projections
+* `focalLength`
+* `focusDistance`
+* `clippingRange`
+* `fStop`
+* `horizontalAperture`
+* `verticalAperture`
+* `shutterOpen`
+* `shutterClose`
+* `instantaneousShutter`
+
+Limitations:
+* `horizontalApertureOffset`
+* `verticalApertureOffset`
+
+More info about camera attributes: https://graphics.pixar.com/usd/docs/api/class_usd_geom_camera.htm

@@ -1,0 +1,11 @@
+* Launch Houdini, save new .hip file in the current directory
+* Add `Sublayer` node (sublayer.png)
+* Set sublayer path to `$HIP/../../asset/basicScene/generated/scene.usda` (sublayerPath.png)
+* Add `RPR Export .rpr` node (node.png)
+* Turn on the display of the node (display.png)
+* Enter the valid path for .rpr output file (path.png)
+* As confirmation of successfull export you should see `Successfully exported file.rpr` message in the `Houdini Console` (console.png)
+
+Notes:
+* Works only in `Full` render quality
+* In the old versions of Houdini, to apply the effect of the node you need to bypass and un-bypass the node (bypass.png)

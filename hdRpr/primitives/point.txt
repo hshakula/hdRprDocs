@@ -1,0 +1,9 @@
+Though HdPoints primitive is supported it's preliminary both in terms of performance and features and requires a lot of improvements from RPR API core side.
+HdPoints are simply instanced sphere meshes. There are zero optimizations that can be applied to point clouds or particle systems.
+The only thing that differs HdPoints from created by hand system of instances is that all instances use one material.
+This material is created from `displayColor` primvar. If `displayColor` has vertex interpolation then hdRpr will not create separate material for each instance but instead optimize it by creating one material and one color buffer that is bound to each instance.
+
+HdPoints supported primvars:
+* `points` (they can be of computed type, just like usdSkel)
+* `widths`
+* `displayColor`

@@ -1,0 +1,13 @@
+Supported:
+* Dome light
+* Distant light
+* Point Light
+* Spot Light
+* IES Light
+* Sphere light
+* Disk light
+* Rect light
+* Cylinder light
+
+Limitations:
+* Geometry lights (sphere, disk, rect and cylinder) are approximated with cubes in Low-High qualities. That's made so because Low and Medium qualities do not support area lights (they simply not processed in lighting computations)

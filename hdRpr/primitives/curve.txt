@@ -1,0 +1,10 @@
+Supported:
+* primvars: `points`, `widths` (varying (per segment) and vertex interpolation), `st` (constant and uniform (per curve) interpolation)
+* wrap: `segmented`, `nonperiodic`, `periodic`
+* type: `linear`, `cubic`
+* basis: `bezier`
+
+Limitations:
+* No native support for linear curves. They are emulated through bezier basis: each segment of linear curve (2 points) is expanded into 4 points of bezier basis
+* `CatmullRom` and `bspline` bases interpret as linear
+* Each segment of the bezier curve uses only widths from edge points (two middle widths is dropped as there are no way to pass them in RPR core API)
