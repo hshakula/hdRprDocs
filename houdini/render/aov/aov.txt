@@ -1,0 +1,50 @@
+* Add `Render Var` node (renderVar.png)
+* Set `Source Name` to `normal` (name.png)
+* Add `Render Product` node (renderProduct.png)
+* Set `Ordered Render Vars` to the path of the `Render Var` node (varPath.png)
+* Add `Render Settings` node (renderSettings.png)
+* Add path of the `Render Product` node to the `Products` of `Render Settings` node (productPath.png)
+* Normal `Render Var` is now available for selection under `Render Outputs` dropdown (renderOutputs.png)
+* Depending on the scene you should already see the result (example.png)
+* Add another `Render Var` node with `color` name and add the path of this node to the `Ordered Render Vars` list in `Render Product` node (varPath2.png)
+* Select new `Render Var` in the `Render Outputs` list (renderOutputs2.png)
+
+Few tips:
+* `Render Var` name in the `Render Outputs` list corresponds to the name of the node (renderVarName.png)
+* Use `float4` for Color AOV to enable alpha (withoutAlpha.png, withAlpha.png)
+* Supported list of `Source Name` values:
+  - color
+  - normal
+  - primId
+  - Neye
+  - depth
+  - linearDepth
+  - rawColor (color without alpha, denoising, tonemapping)
+  - albedo
+  - variance
+  - opacity
+  - emission
+  - directIllumination
+  - indirectIllumination
+  - ao
+  - directDiffuse
+  - directReflect
+  - indirectDiffuse
+  - indirectReflect
+  - refract
+  - volume
+  - lightGroup0 (supported but plugin does not configure it yet)
+  - lightGroup1 (supported but plugin does not configure it yet)
+  - lightGroup2 (supported but plugin does not configure it yet)
+  - lightGroup3 (supported but plugin does not configure it yet)
+  - colorRight (supported but plugin does not configure it yet)
+  - materialIdx
+  - objectGroupId
+  - geometricNormal
+  - worldCoordinate
+  - primvars:st
+  - shadowCatcher
+  - reflectionCatcher
+  - background
+  - velocity
+  - viewShadingNormal
