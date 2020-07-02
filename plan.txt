@@ -2,8 +2,7 @@
 * hdRpr
     - render
         # aov
-        # tonemap
-        # renderSettings
+        # renderSettings ✓
     - primitives
         # mesh ✓
         # curve ✓
@@ -28,7 +27,7 @@
         # camera
         # material
     - render
-        # aov
+        # aov ✓
         # renderSettings ✓
     - general
         # motionBlur ✓

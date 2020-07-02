@@ -1,0 +1,5 @@
+# For developers
+
+Render settings of hdRpr can be configured by using [HdRenderDelegate::SetRenderSetting](https://github.com/PixarAnimationStudios/USD/blob/master/pxr/imaging/hd/renderDelegate.h#L149) method.
+
+For the list of relevant render settings see [pxr/imaging/plugin/hdRpr/python/generateRenderSettingFiles.py](https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRenderUSD/blob/master/pxr/imaging/plugin/hdRpr/python/generateRenderSettingFiles.py) file in `settings` entry of each array entry of `render_setting_categories`: `defaultValue` defines the setting type, `name` corresponds to the `key` argument of `HdRenderDelegate::SetRenderSetting`.
