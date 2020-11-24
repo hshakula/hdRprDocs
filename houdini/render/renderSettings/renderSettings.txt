@@ -4,7 +4,7 @@
 * Add `Render Settings` node and select `RPR` tab (node.png)
 * Turn on the display of the node (display.png)
 * Set `Max Pixel Samples` to 16 (samples.png)
-* Enable denoise (denoise.png). You can turn it on or off and you will not lose your current accumulated pixels. The same applies to `Max Pixel Samples`, if you are increasing the value then rendering will simply start from the same sample counter.
-* Adaptive Sampling is controled by `Min Pixel Samples` and `Variance Threshold`. If `Variance Threshold` then adaptive sampling is disabled (default). Try to compare render times for plain 1024 max samples and 1024 max samples, 128 min samples and variance threshold set to 0.05 (1.png - 1 min 26 sec; 2.png - 35 sec)
+* Enable denoise (denoise.png).
+* (Not supported in RPR2 yet) Adaptive Sampling is controled by `Min Pixel Samples` and `Variance Threshold`. If `Variance Threshold` then adaptive sampling is disabled (default). Try to compare render times for plain 1024 max samples and 1024 max samples, 128 min samples and variance threshold set to 0.05 (1.png - 1 min 26 sec; 2.png - 35 sec)
 * Devices that are used for rendering controlled via `Render Device`. Right now, hdRpr is using all available GPUs.
 * Full Spectrum Rendering - `Render Quality` (full.png; low.png)
