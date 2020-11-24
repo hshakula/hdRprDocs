@@ -1,0 +1,42 @@
+#usda 1.0
+(
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "Sphere"
+{
+    def Sphere "geo"
+    {
+        float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+        rel material:binding = </Sphere/Look/rpr_uberv2>
+        int primvars:rpr:subdivisionLevel = 2 (
+            interpolation = "constant"
+        )
+        double radius = 1
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-1.5584312975406647, 1, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Scope "Look"
+    {
+        def Material "rpr_uberv2"
+        {
+            token outputs:rpr:surface.connect = </Sphere/Look/rpr_uberv2/rpr_uberv2.outputs:surface>
+
+            def Shader "rpr_uberv2"
+            {
+                uniform token info:id = "rpr_uberv2"
+                float inputs:uber_diffuse_weight = 0
+                float inputs:uber_reflection_weight = 1
+                float inputs:uber_refraction_ior = 2.8
+                float inputs:uber_refraction_roughness = 0.3
+                float inputs:uber_refraction_weight = 1
+                token outputs:surface
+            }
+        }
+    }
+}
+

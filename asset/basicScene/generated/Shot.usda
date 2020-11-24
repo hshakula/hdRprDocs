@@ -1,0 +1,72 @@
+#usda 1.0
+(
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+over "testgeometry_rubbertoy1"
+{
+    matrix4d xformOp:transform:edit1 = ( (0.9999961853027344, -0.0027531746309250593, -0.00014700931205879897, 0), (0.002755828434601426, 0.9997314214706421, 0.023010047152638435, 0), (0.00008361916115973145, -0.023010363802313805, 0.9997352361679077, 0), (-0.0004913765005767345, -0.40963807702064514, -0.013827227987349033, 1) )
+    uniform token[] xformOpOrder = ["xformOp:transform:xform", "xformOp:transform:edit1"]
+}
+
+def Xform "cameras"
+{
+    def Camera "camera1"
+    {
+        float2 clippingRange = (1, 1000000)
+        float focalLength = 0.5
+        float focusDistance = 9.0691595
+        float fStop = 0
+        float horizontalAperture = 0.20955
+        float horizontalApertureOffset = 0
+        token projection = "perspective"
+        double shutter:close = 0.25
+        double shutter:open = -0.25
+        float verticalAperture = 0.11787187
+        float verticalApertureOffset = 0
+        matrix4d xformOp:transform = ( (0.8297644931751319, 0.028607934812977482, 0.55738000675621, 0), (0.17273033536289847, 0.9364895320173956, -0.3052074502158489, 0), (-0.530711896523186, 0.34952674073320295, 0.7721243037239454, 0), (-6.785332256986236, 5.288132294794578, 10.356166523520864, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+
+def Xform "lights"
+{
+    def DomeLight "domelight1"
+    {
+        color3f color = (1, 1, 1)
+        float colorTemperature = 4871.1895
+        float diffuse = 1
+        bool enableColorTemperature = 1
+        float exposure = 0
+        rel filters = None
+        float intensity = 0.25
+        bool normalize = 0
+        rel portals = None
+        float specular = 1
+        asset texture:file = @@
+        token texture:format = "automatic"
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def RectLight "light1"
+    {
+        color3f color = (1, 1, 1)
+        float colorTemperature = 9000
+        float diffuse = 1
+        bool enableColorTemperature = 1
+        float exposure = 0
+        float height = 1
+        float intensity = 25
+        bool normalize = 0
+        float specular = 1
+        asset texture:file = @@
+        float width = 1
+        matrix4d xformOp:transform = ( (0.8942821292263085, 8.425280063068453e-17, -0.44750360148993235, 0), (-0.2763962253967598, 0.7864607756763387, -0.5523446160767709, 0), (0.3519440295457273, 0.6176402256350956, 0.7033178170248102, 0), (1.8901045280262911, 4.0553039777615, 3.934592523181888, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+

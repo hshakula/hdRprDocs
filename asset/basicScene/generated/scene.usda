@@ -4,88 +4,13 @@
     framesPerSecond = 24
     metersPerUnit = 1
     startTimeCode = 1
+    subLayers = [
+        @./Shot.usda@,
+        @./ShaderBall.usd@,
+        @./RubberToy.usd@,
+        @./RefractiveSphere.usda@
+    ]
     timeCodesPerSecond = 24
     upAxis = "Y"
 )
-
-def Xform "lights"
-{
-    def DiskLight "light1"
-    {
-        color3f color = (0.40499997, 0.7025, 1)
-        float diffuse = 1
-        bool enableColorTemperature = 0
-        float exposure = 0
-        float intensity = 30
-        bool normalize = 0
-        bool primvars:rpr:visibilityGlossyReflection = 0 (
-            interpolation = "constant"
-        )
-        float radius = 0.5
-        float specular = 1
-        custom bool treatAsPoint = 0
-        matrix4d xformOp:transform = ( (-0.32026599632959174, 0, -0.9473276579911588, 0), (0, 1, -0, 0), (0.9473276579911588, 0, -0.32026599632959174, 0), (2.8050111532211304, 1.3045864403247833, -0.5758672803640366, 1) )
-        uniform token[] xformOpOrder = ["xformOp:transform"]
-    }
-
-    def DistantLight "light2"
-    {
-        float angle = 1
-        color3f color = (1, 1, 1)
-        float colorTemperature = 5000
-        float diffuse = 1
-        bool enableColorTemperature = 1
-        float exposure = 0
-        float intensity = 5
-        bool normalize = 0
-        float specular = 1
-        custom bool treatAsPoint = 0
-        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0.8464720634861833, -0.5324331373397442, 0), (0, 0.5324331373397442, 0.8464720634861833, 0), (0, 0, 0, 1) )
-        uniform token[] xformOpOrder = ["xformOp:transform"]
-    }
-}
-
-def Xform "cameras"
-{
-    def Camera "camera1"
-    {
-        float2 clippingRange = (1, 1000000)
-        float focalLength = 50
-        float focusDistance = 4.249337
-        float fStop = 0
-        float horizontalAperture = 20.955
-        float horizontalApertureOffset = 0
-        token projection = "perspective"
-        double shutter:close = 0.25
-        double shutter:open = -0.25
-        float verticalAperture = 15.2908
-        float verticalApertureOffset = 0
-        matrix4d xformOp:transform = ( (0.917832556279221, 0, 0.3969677551564491, 0), (0.1939287640361846, 0.8725497689499437, -0.448384360994892, 0), (-0.3463741230423375, 0.4885252303672757, 0.8008545849161706, 0), (-1.284729824675004, 2.2754113180431745, 3.296580752146308, 1) )
-        uniform token[] xformOpOrder = ["xformOp:transform"]
-    }
-}
-
-def "crag" (
-    prepend references = @./crag.usd@
-)
-{
-}
-
-def "sphereGlass" (
-    prepend references = @./sphereGlass.usd@</sphereGlass>
-)
-{
-}
-
-def "shaderBall" (
-    prepend references = @./shaderBall.usd@
-)
-{
-}
-
-def "grid" (
-    prepend references = @./grid.usd@
-)
-{
-}
 
