@@ -1,50 +1,21 @@
-* Add `Render Var` node (renderVar.png)
-* Set `Source Name` to `normal` (name.png)
-* Add `Render Product` node (renderProduct.png)
-* Set `Ordered Render Vars` to the path of the `Render Var` node (varPath.png)
-* Add `Render Settings` node (renderSettings.png)
-* Add path of the `Render Product` node to the `Products` of `Render Settings` node (productPath.png)
-* Normal `Render Var` is now available for selection under `Render Outputs` dropdown (renderOutputs.png)
-* Depending on the scene you should already see the result (example.png)
-* Add another `Render Var` node with `color` name and add the path of this node to the `Ordered Render Vars` list in `Render Product` node (varPath2.png)
-* Select new `Render Var` in the `Render Outputs` list (renderOutputs2.png)
+# Render Var
 
-Few tips:
-* `Render Var` name in the `Render Outputs` list corresponds to the name of the node (renderVarName.png)
+There are few ways to control RPR AOVs:
+* Using the "RPR Standard Render Vars" node (rprStandardRenderVars.png)
+    It allows you to easily enable or disable a particular AOV. This node is simply a wrapper around many "Render Var" nodes that correspond to a particular AOV. Hope inside of this node to see its implementation (rprStandardRenderVarsImpl.png). You can edit its implementation for your needs (customizing AOV parameters like format, name, etc) with "Allow Editing of Contents" (allowEdit.png)
+* Using the "Render Var" node (renderVar.png)
+    See the implementation of the "RPR Standard Render Vars" node for usage examples.
+
+With the Full quality (RPR 2.0) you can set up LPE AOVs (search "Light Path Expressions" for the details): you can do it by setting the "Source Type" of a "Render Var" node to "LPE" (lpeSourceType.png) and setting the "Source Name" to some light path expression (e.g. `C<RD>[<L.>O]` for direct diffuse AOV).
+
+# Render Product
+
+After you have set "Render Var" nodes, you need to add "Render Product" node (renderProduct.png) and set its "Ordered Render Vars" to paths to "Render Var" nodes that correspond to a particular AOV.
+After that, add the "Render Settings" node and set its "Products" parameter to the path of the "Render Product" node (productPath.png).
+Added AOV should be listed in the "Render Outputs" dropdown (renderOutputs.png).
+
+# Notes
+
+* "Render Var" name in the "Render Outputs" list corresponds to the name of the node (renderVarName.png)
 * Use `float4` for Color AOV to enable alpha (withoutAlpha.png, withAlpha.png)
-* Supported list of `Source Name` values:
-  - color
-  - normal
-  - primId
-  - Neye
-  - depth
-  - linearDepth
-  - rawColor (color without alpha, denoising, tonemapping)
-  - albedo
-  - variance
-  - opacity
-  - emission
-  - directIllumination
-  - indirectIllumination
-  - ao
-  - directDiffuse
-  - directReflect
-  - indirectDiffuse
-  - indirectReflect
-  - refract
-  - volume
-  - lightGroup0 (supported but plugin does not configure it yet)
-  - lightGroup1 (supported but plugin does not configure it yet)
-  - lightGroup2 (supported but plugin does not configure it yet)
-  - lightGroup3 (supported but plugin does not configure it yet)
-  - colorRight (supported but plugin does not configure it yet)
-  - materialIdx
-  - objectGroupId
-  - geometricNormal
-  - worldCoordinate
-  - primvars:st
-  - shadowCatcher
-  - reflectionCatcher
-  - background
-  - velocity
-  - viewShadingNormal
+* You can always find all supported "Source Name" parameter values in the implementation of "RPR Standard Render Vars" node
