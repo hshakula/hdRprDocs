@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<materialx version="1.37">
+  <look name="tiling_Checkered_L">
+    <materialassign name="tiling_Checkered_MA" material="tiling_Checkered_SM" />
+  </look>
+  <surfacematerial name="tiling_Checkered_SM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Uber_0" />
+  </surfacematerial>
+  <rpr_uberv2 name="Uber_0" type="surfaceshader">
+    <input name="uber_diffuse_color" type="color3" nodename="node5" />
+    <input name="uber_diffuse_weight" type="float" value="1" />
+    <input name="uber_diffuse_roughness" type="float" value="0.5" />
+    <input name="uber_diffuse_normal" type="vector3" nodename="node0" />
+    <input name="uber_reflection_color" type="color3" value="1, 1, 1" />
+    <input name="uber_reflection_weight" type="float" value="1" />
+    <input name="uber_reflection_roughness" type="float" nodename="node3" />
+    <input name="uber_reflection_anisotropy" type="float" value="0" />
+    <input name="uber_reflection_anisotropy_rotation" type="float" value="0" />
+    <input name="uber_reflection_mode" type="string" value="PBR" />
+    <input name="uber_reflection_ior" type="float" value="1.46" />
+    <input name="uber_reflection_normal" type="vector3" nodename="node0" />
+    <input name="uber_refraction_color" type="color3" value="1, 1, 1" />
+    <input name="uber_refraction_weight" type="float" value="0" />
+    <input name="uber_refraction_roughness" type="float" value="0" />
+    <input name="uber_refraction_ior" type="float" value="1.5" />
+    <input name="uber_refraction_thin_surface" type="boolean" value="false" />
+    <input name="uber_refraction_absorption_color" type="color3" value="1, 1, 1" />
+    <input name="uber_refraction_absorption_distance" type="float" value="1" />
+    <input name="uber_refraction_caustics" type="boolean" value="true" />
+    <input name="uber_coating_color" type="color3" value="1, 1, 1" />
+    <input name="uber_coating_weight" type="float" value="0" />
+    <input name="uber_coating_roughness" type="float" value="0" />
+    <input name="uber_coating_mode" type="string" value="PBR" />
+    <input name="uber_coating_ior" type="float" value="3" />
+    <input name="uber_coating_metalness" type="float" value="0" />
+    <input name="uber_coating_transmission_color" type="color3" value="1, 1, 1" />
+    <input name="uber_coating_thickness" type="float" value="0" />
+    <input name="uber_sheen" type="color3" value="1, 1, 1" />
+    <input name="uber_sheen_tint" type="float" value="0" />
+    <input name="uber_sheen_weight" type="float" value="0" />
+    <input name="uber_emission_color" type="color3" value="1, 1, 1" />
+    <input name="uber_emission_weight" type="float" value="0" />
+    <input name="uber_emission_mode" type="string" value="Singlesided" />
+    <input name="uber_transparency" type="float" value="0" />
+    <input name="uber_sss_scatter_color" type="color3" value="0, 0, 0" />
+    <input name="uber_sss_scatter_distance" type="float" value="0" />
+    <input name="uber_sss_scatter_direction" type="float" value="0" />
+    <input name="uber_sss_weight" type="float" value="0" />
+    <input name="uber_sss_multiscatter" type="boolean" value="false" />
+    <input name="uber_backscatter_weight" type="float" value="0" />
+    <input name="uber_backscatter_color" type="color3" value="1, 1, 1" />
+  </rpr_uberv2>
+  <image name="node5" type="color3" colorspace="gamma22">
+    <input name="texcoord" type="vector2" nodename="node4" />
+    <parameter name="file" type="filename" value="../Textures/Tiles_BW_checkered.jpg" />
+  </image>
+  <texcoord name="node4" type="vector2" />
+  <heighttonormal name="node0" type="vector3">
+    <input name="in" type="float" nodename="node2" />
+    <parameter name="scale" type="float" value="0.5" />
+  </heighttonormal>
+  <image name="node2" type="float" colorspace="none">
+    <input name="texcoord" type="vector2" nodename="node1" />
+    <parameter name="file" type="filename" value="../Textures/Tiles_white_bump.jpg" />
+  </image>
+  <texcoord name="node1" type="vector2" />
+  <image name="node3" type="float" colorspace="none">
+    <input name="texcoord" type="vector2" nodename="node6" />
+    <parameter name="file" type="filename" value="../Textures/Tiles_BW_checkered_specular.jpg" />
+  </image>
+  <texcoord name="node6" type="vector2" />
+</materialx>
